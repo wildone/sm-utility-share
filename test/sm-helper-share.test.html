@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>sm-helper-share</title>
+    <script src="../../webcomponentsjs/webcomponents.min.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../test-fixture/test-fixture-mocha.js"></script>
+    <link rel="import" href="../../test-fixture/test-fixture.html">
+
+    <!-- Import the element to test -->
+    <link rel="import" href="../sm-helper-share.html">
+    <script src="./sm-helper-share.fixtures.js"></script>
+  </head>
+  <body>
+    <test-fixture id="default">
+      <template>
+        <sm-helper-share type="foobar" key="foo"></sm-helper-share>
+      </template>
+    </test-fixture>
+    <script>
+      describe('<sm-helper-share>', function() {
+
+        var a, b,
+            componentFixtures;
+
+        componentFixtures = window.fixtures;
+
+        beforeEach(function() {
+          a = fixture('default');
+          b = fixture('default');
+        });
+
+        it('is okay', function() {
+          expect(a).to.be.ok;
+          expect(b).to.be.ok;
+        });
+
+        it('should share values', function() {
+          a.value = 'bar';
+          expect(b.value).to.equal('bar');
+        });
+      });
+    </script>
+  </body>
+</html>

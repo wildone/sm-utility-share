@@ -1,0 +1,36 @@
+{
+  "name": "sm-helper-share",
+  "description": "Store shared data",
+  "version": "0.0.0",
+  "authors": [
+    "Simpla <admin@simpla.io>"
+  ],
+  "license": "MIT",
+  "main": "sm-helper-share.html",
+  "keywords": [
+    "simpla",
+    "web component",
+    "polymer",
+    "share"
+  ],
+  "ignore": [
+    "*",
+    "!src/**/*",
+    "!sm-helper-share.html",
+    "!LICENSE"
+  ],
+  "dependencies": {
+    "webcomponentsjs": "^0.7.14",
+    "polymer": "^1.1.4",
+    "simpla": "git@github.com:simplaio/simpla.git",
+    "iron-meta": "PolymerElements/iron-meta#~1.1.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "^3.3.22",
+    "test-fixture": "PolymerElements/test-fixture#~1.0.0"
+  },
+  "componentImports": [
+    "polymer/polymer.html",
+    "simpla/simpla.html"
+  ]
+}
