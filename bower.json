@@ -22,7 +22,7 @@
   "dependencies": {
     "webcomponentsjs": "^0.7.14",
     "polymer": "^1.1.4",
-    "simpla": "git@github.com:simplaio/simpla.git",
+    "simpla-core": "git@github.com:simplaio/simpla-core.git",
     "iron-meta": "PolymerElements/iron-meta#~1.1.0"
   },
   "devDependencies": {
@@ -31,6 +31,6 @@
   },
   "componentImports": [
     "polymer/polymer.html",
-    "simpla/simpla.html"
+    "simpla-core/simpla-core.html"
   ]
 }
