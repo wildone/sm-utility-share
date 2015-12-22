@@ -1,8 +1,8 @@
 {
-  "name": "sm-helper-share",
+  "name": "sm-utility-share",
   "version": "0.1.0",
   "description": "Store shared data",
-  "main": "sm-helper-share.html",
+  "main": "sm-utility-share.html",
   "scripts": {
     "test": "gulp test:local"
   },
@@ -16,10 +16,10 @@
   ],
   "repository": {
     "type" : "git",
-    "url" : "https://github.com/simplaio/sm-helper-share.git"
+    "url" : "https://github.com/simplaio/sm-utility-share.git"
   },
   "bugs": {
-    "url" : "https://github.com/simplaio/sm-helper-share/issues"
+    "url" : "https://github.com/simplaio/sm-utility-share/issues"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.0",

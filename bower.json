@@ -1,12 +1,12 @@
 {
-  "name": "sm-helper-share",
+  "name": "sm-utility-share",
   "description": "Store shared data",
   "version": "0.0.0",
   "authors": [
     "Simpla <admin@simpla.io>"
   ],
   "license": "MIT",
-  "main": "sm-helper-share.html",
+  "main": "sm-utility-share.html",
   "keywords": [
     "simpla",
     "web component",
@@ -16,7 +16,7 @@
   "ignore": [
     "*",
     "!src/**/*",
-    "!sm-helper-share.html",
+    "!sm-utility-share.html",
     "!LICENSE"
   ],
   "dependencies": {

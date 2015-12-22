@@ -1,8 +1,8 @@
 let instances = {};
 
-class SmHelperShare {
+class SmUtilityShare {
   beforeRegister() {
-    this.is = 'sm-helper-share';
+    this.is = 'sm-utility-share';
 
     this.properties = {
       type: String,
@@ -39,4 +39,4 @@ class SmHelperShare {
 
 window.inst = instances;
 
-Polymer(SmHelperShare);
+Polymer(SmUtilityShare);
