@@ -1,4 +1,4 @@
-# Utility share
+# Utility Share
 ![][bower-badge] [![][travis-badge]][travis-url] [![][bowerdeps-badge]][bowerdeps-url] [![][npmdevdeps-badge]][npmdevdeps-url]
 
 Utility to store shared data in a Polymer app
