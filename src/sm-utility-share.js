@@ -11,6 +11,10 @@ class SmUtilityShare {
         type: String,
         observer: '_valueChanged',
         notify: true
+      },
+      readonly: {
+        type: Boolean,
+        value: false
       }
     }
 
@@ -31,9 +35,14 @@ class SmUtilityShare {
   }
 
   _valueChanged(value) {
-    instances[this.type][this.key]
-      .filter(element => element !== this)
-      .forEach(element => element.value = value);
+    const toUpdate = instances[this.type][this.key]
+                      .filter(element => element !== this);
+
+    if (this.readonly) {
+      this.value = toUpdate[0].value;
+    } else {
+      toUpdate.forEach(element => element.value = value);
+    }
   }
 }
 

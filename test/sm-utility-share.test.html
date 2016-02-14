@@ -40,6 +40,16 @@
           a.value = 'bar';
           expect(b.value).to.equal('bar');
         });
+
+        it('should be able to have readonly values', function() {
+          a.readonly = true;
+
+          a.value = 'qux';
+          expect(b.value).not.to.equal('qux');
+
+          b.value = 'foo';
+          expect(a.value).to.equal('foo');
+        });
       });
     </script>
   </body>
