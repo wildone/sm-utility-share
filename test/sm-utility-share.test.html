@@ -18,6 +18,11 @@
         <sm-utility-share type="foobar" key="foo"></sm-utility-share>
       </template>
     </test-fixture>
+    <test-fixture id="blank">
+      <template>
+        <sm-utility-share></sm-utility-share>
+      </template>
+    </test-fixture>
     <script>
       describe('<sm-utility-share>', function() {
 
@@ -49,6 +54,18 @@
 
           b.value = 'foo';
           expect(a.value).to.equal('foo');
+        });
+
+        it('only set value when type and key have been set', function() {
+          var blank = fixture('blank');
+
+          blank.value = 'qux';
+          expect(a.value).not.to.equal(blank.value);
+
+          blank.type = a.type;
+          blank.key = a.key;
+
+          expect(blank.value).to.equal(a.value);
         });
       });
     </script>

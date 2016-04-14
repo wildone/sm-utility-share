@@ -1,6 +1,6 @@
 {
   "name": "sm-utility-share",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Store shared data",
   "main": "sm-utility-share.html",
   "scripts": {
@@ -16,10 +16,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/simplaio/sm-utility-share.git"
+    "url": "https://github.com/SimplaElements/sm-utility-share.git"
   },
   "bugs": {
-    "url": "https://github.com/simplaio/sm-utility-share/issues"
+    "url": "https://github.com/SimplaElements/sm-utility-share/issues"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.0",

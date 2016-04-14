@@ -43,13 +43,19 @@
       }
 
       _valueChanged(value) {
-        const toUpdate = instances[this.type][this.key]
-                          .filter(element => element !== this);
+        const ready = this.type && this.key;
 
-        if (this.readonly) {
-          this.value = toUpdate[0].value;
-        } else {
-          toUpdate.forEach(element => element.value = value);
+        if (ready) {
+          const toUpdate = instances[this.type][this.key]
+                            .filter(element => element !== this);
+
+          if (this.readonly) {
+            this.value = toUpdate[0].value;
+          } else {
+            toUpdate.forEach(element => element.value = value);
+          }
+        }  else {
+          this.value = value;
         }
       }
     }
