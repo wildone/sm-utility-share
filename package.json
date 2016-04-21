@@ -1,6 +1,6 @@
 {
   "name": "sm-utility-share",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Store shared data",
   "main": "sm-utility-share.html",
   "scripts": {
