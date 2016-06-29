@@ -29,6 +29,7 @@
     "babel-preset-es2015-rollup": "^1.0.0",
     "browser-sync": "^2.9.0",
     "eslint": "^1.6.0",
+    "eventemitter3": "^1.2.0",
     "gulp": "^3.9.0",
     "gulp-eslint": "^1.0.0",
     "gulp-htmlmin": "^1.2.0",

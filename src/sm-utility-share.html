@@ -11,7 +11,17 @@
     <iron-meta id="meta" type="[[type]]" key="[[key]]" value="{{value}}"></iron-meta>
   </template>
   <script>
-    let instances = {};
+    import EventEmitter from 'eventemitter3';
+
+    let instances = {},
+        store = {},
+        updating = false;
+
+    const emitter = new EventEmitter();
+
+    function makeKey(...args) {
+      return args.join('.');
+    }
 
     class SmUtilityShare {
       beforeRegister() {
@@ -37,30 +47,43 @@
       }
 
       _updateInstance(type, key) {
-        instances[type] = instances[type] || {};
-        instances[type][key] = instances[type][key] || [];
-
-        if (instances[type][key].length > 0) {
-          this.value = instances[type][key][0].value;
+        if (this.__listener && this.__key) {
+          emitter.off(this.__key, this.__listener);
         }
 
-        instances[type][key].push(this);
+        this.__key = makeKey(type, key);
+
+        this.__listener = (value) => {
+          if (!this.readonly) {
+            this._updating = true;
+            this.value = value;
+            this._updating = false;
+          }
+        };
+
+        emitter.on(this.__key, this.__listener);
+
+        this._updating = true;
+        this.value = store[this.__key];
+        this._updating = false;
       }
 
-      _valueChanged(value) {
-        const ready = this.type && this.key;
+      _valueChanged(value, previous) {
+        const ready = this.__key && !this._updating && store[this.__key] !== value;
 
         if (ready) {
-          const toUpdate = instances[this.type][this.key]
-                            .filter(element => element !== this);
-
-          if (this.readonly) {
-            this.value = toUpdate[0].value;
-          } else {
-            toUpdate.forEach(element => element.value = value);
-          }
-        }  else {
-          this.value = value;
+          emitter.emit(this.__key, value);
+          store[this.__key] = value;
+          // const toUpdate = instances[this.type][this.key]
+          //                   .filter(element => element !== this);
+          //
+          // if (this.readonly) {
+          //   this.value = previous;
+          // } else if (!updating) {
+          //   updating = true;
+          //   toUpdate.forEach(element => element.value = value);
+          //   updating = false;
+          // }
         }
       }
     }
